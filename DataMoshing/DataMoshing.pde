@@ -1,7 +1,5 @@
 import processing.video.*;
-import fpstracker.core.*;
 
-PerfTracker pt;
 Movie movie;
 PGraphics current, previous;
 boolean type;
@@ -24,8 +22,6 @@ void setup() {
   current = createGraphics(width, height, P2D);
   previous = createGraphics(width, height, P2D);
   datamoshBuffer = createGraphics(width, height, P2D);
-
-  pt = new PerfTracker(this, 100);
 
   frameRate(30);
 }
@@ -63,7 +59,6 @@ void draw() {
     previous.image(datamoshBuffer, 0, 0, previous.width, previous.height);
     //previous.image(current, 0, 0, previous.width, previous.height);
     previous.endDraw();
-    pt.display(0, 0);
   }
 }
 
